@@ -1,0 +1,56 @@
+{
+  "name": "Jupyter CUDA 12 app",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "app",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": [
+    "./startupscript/post-startup.sh",
+    "jovyan",
+    "/home/jovyan",
+    "${templateOption:cloud}",
+    "${templateOption:login}"
+  ],
+  "postStartCommand": [
+    "./startupscript/remount-on-restart.sh",
+    "jovyan",
+    "/home/jovyan",
+    "${templateOption:cloud}",
+    "${templateOption:login}"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/java:1.6.3": {
+      "version": "17"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1.1.1": {},
+    "ghcr.io/dhoeric/features/google-cloud-cli:1.0.1": {}
+  },
+  "remoteUser": "root",
+  "customizations": {
+    "workbench": {
+      "opens": {
+        "extensions": [
+          ".ipynb",
+          ".R",
+          ".py",
+          ".md",
+          ".html",
+          ".latex",
+          ".pdf",
+          ".bmp",
+          ".gif",
+          ".jpeg",
+          ".jpg",
+          ".png",
+          ".svg",
+          ".csv",
+          ".tsv",
+          ".json",
+          ".vl"
+        ],
+        "fileUrlSuffix": "/lab/tree/{path}",
+        "folderUrlSuffix": "/lab/tree/{path}"
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 {
-  "id": "jupyter-template",
-  "version": "0.0.2",
-  "name": "Jupyter",
-  "description": "A Template to run Jupyter lab",
-  "documentationURL": "https://github.com/verily-src/workbench-app-devcontainers/tree/master/src/jupyter-template",
+  "id": "jupyter-cuda12",
+  "version": "0.0.1",
+  "name": "Jupyter with CUDA 12",
+  "description": "A Template to run Jupyter with CUDA 12 support on workbench",
+  "documentationURL": "https://github.com/verily-src/workbench-app-devcontainers/tree/master/src/jupyter-cuda12",
   "licenseURL": "https://github.com/verily-src/workbench-app-devcontainers/blob/master/LICENSE",
   "options": {
     "cloud": {
@@ -27,7 +27,7 @@
     "containerImage": {
       "type": "string",
       "description": "The container image to use",
-      "default": "debian:bullseye"
+      "default": "quay.io/jupyter/scipy-notebook:mamba-2.3.0"
     },
     "containerPort": {
       "type": "number",
